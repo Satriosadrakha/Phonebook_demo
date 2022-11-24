@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.getJSON("http://localhost:8080/phonebooks", function(result){
+                $.each(result, function(key,value) {
+                    $("#phonebooksJson").append(value.name + " " + value.phoneNumber + " " + value.region + "\n");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id = "phonebooksJson"> </div>
+</body>
+</html>
